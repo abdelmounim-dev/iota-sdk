@@ -1,0 +1,39 @@
+{
+  "id": null,
+  "uid": "loki-logs-dashboard",
+  "title": "Loki Logs Dashboard",
+  "tags": [
+    "loki",
+    "logs"
+  ],
+  "timezone": "browser",
+  "schemaVersion": 30,
+  "version": 1,
+  "panels": [
+    {
+      "type": "logs",
+      "title": "Logs Panel",
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "datasource": "Loki",
+      "targets": [
+        {
+          "expr": "{job=\"varlogs\"}",
+          "refId": "A"
+        }
+      ],
+      "options": {
+        "showLabels": [
+          "level",
+          "job"
+        ],
+        "wrapLogMessage": true,
+        "prettifyLogMessage": true
+      }
+    }
+  ]
+}
